@@ -1,0 +1,11 @@
+RewriteEngine On
+
+RewriteRule ^accueil$ accueil.php
+RewriteRule ^.{0}$ index.php
+RewriteRule ^clientphysiqueV$ view/clientparticulier/particulier.php
+RewriteRule ^cliententrepriseV$ view/cliententreprise/entreprise.php
+RewriteRule ^compteV$ view/Compte/compte.php
+
+RewriteRule clientphysiqueC$ controller/particulierController.php
+RewriteRule cliententrepriseC$ controller/entrepriseController.php
+RewriteRule compteC$ controller/compteController.php
