@@ -1,11 +1,11 @@
 <?php
-namespace model;
+namespace model;     //creer des namespace dans chaque classe
 //code by judith
 //include '..DbConnect.php';
 //creer une classe <<Clientparticulier>>
 //\
 
-use DbConnect;
+use DbConnect;  //Aulieu de include on use le Dbconnect
 
 class Clientparticulier
 {

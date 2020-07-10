@@ -7,8 +7,8 @@
 //include '../model/class_particulier.php';
 
 
-include_once '../config/autoload.php';
-use model\Clientparticulier;//use/namespace/nom classe;
+include_once '../config/autoload.php';  //On inclut le fichier autoload.php
+use model\Clientparticulier;    //on use la classe Clientparticulier qui se trouve dans model/Clientparticulier
 use model\DbConnect;
 
    if(!empty($_POST)){
