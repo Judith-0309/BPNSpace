@@ -2,10 +2,12 @@
 
 //inclure les pages entreprises.php et class_particulier.php
 //include '../view/cliententreprise/entreprise.php';
-include '../model/class_entreprise.php';
+//include '../model/class_entreprise.php';
  
 
-
+include_once '../config/autoload.php';
+use model\ClientEntreprise;
+use model\DbConnect;
 
 
    if(!empty($_POST)){

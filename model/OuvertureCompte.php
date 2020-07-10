@@ -1,11 +1,12 @@
 <?php
 //code by judith
+namespace model;
 
-
-include '../dbConnect.php';
+//include '../dbConnect.php';
 
 //creer une classe <<OuvertureCompte>>
 //declaration des variables privées
+use DbConnect;
 class OuvertureCompte
 {
     private $id;

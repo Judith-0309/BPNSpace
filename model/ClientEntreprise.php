@@ -1,9 +1,10 @@
 <?php
 //code by judith
 
-
-include '../dbConnect.php';
+namespace model;
+//include '../dbConnect.php';
 //creer une classe <<Cliententreprise>>
+use DbConnect;
 
 class ClientEntreprise
 {
@@ -71,7 +72,7 @@ class ClientEntreprise
 
         //creer une fonction enregistrer
         public function enregistrer(){
-            $connect = new dbConnect();
+            $connect = new \model\DbConnect();
             $db = $connect->getConnexion();
 
 
