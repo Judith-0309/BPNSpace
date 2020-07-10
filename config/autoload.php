@@ -1,50 +1,29 @@
 <?php
-class Autoloader
+class Autoloader   //creer une classe Autoloader
 {
-    static function register()
+    static function register()          //creer une fonction statique register
     {
         spl_autoload_register(array(__CLASS__,"autoload"));
     }
     static function autoload($class)
     {
-       $jls = str_replace("\\","/", $class);
+       $jls = str_replace("\\","/", $class);     ///pour remplacer les "\\" par "/"
     
-        $adn = str_replace("\\","/",__DIR__.$jls.".php");
+        $adn = str_replace("\\","/",__DIR__.$jls.".php");    //recuperation du chemin absolue à partir de la racine
 
-        $samba = str_replace("config","",$adn);
+        $samba = str_replace("config","",$adn);   // enlever le config du chemin absolue
 
     //     echo $samba;
     //    die();
 
 
 
-        if (file_exists($samba)) {
+        if (file_exists($samba)) {        //lui dire que si $samba existe de l'inclure
             //   require_once "$samba";
              include_once "$samba";
 
         }
-       //echo str_replace("\\","/" $class);
-       
-    // if(file_exists("model/".$class.".php"))
-    //   {
-    //     require_once "model/".$class.".php";  
-    //    }
-    // else if(file_exists("controller/".$class.".php"))
-    // {
-    //     require_once "controller/".$class.".php";
-    // }
-    //echo str_replace("\\","/", $class);
-
-    //namespace
-    // if(file_exists(str_replace("\\","/", $class.".php")))
-    // {
-
-    //     require_once str_replace("\\","/", $class.".php");
-    // }
-    // else
-    // {
-    //     die("Merci d'utliser le mot clé USE ".$class );
-    // }    
+        
 }
 }
 Autoloader::register();
