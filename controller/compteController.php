@@ -2,9 +2,11 @@
 
 //inclure les pages entreprises.php et class_particulier.php
 //include '../view/Compte/compte.php';
-include '../model/class_compte.php';
+//include '../model/class_compte.php';
 
-
+include_once '../config/autoload.php';
+use model\OuvertureCompte;
+use model\DbConnect;
 
 
 

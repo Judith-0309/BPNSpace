@@ -81,7 +81,7 @@ class OuvertureCompte
         //creer une fonction enregistrer
         public function enregistrer(){
             try{
-            $connect = new dbConnect();
+            $connect = new \model\DbConnect();
             $db = $connect->getConnexion();
 
 
@@ -89,7 +89,17 @@ class OuvertureCompte
         $req= $db->exec("INSERT INTO `compte`(`idCompte`, `typeCompte`, `Numero_Compte`, `Cle_Rib`, `Etat_Compte`, `Depot_Initial`, `Date_Ouverture`) 
         VALUES (NULL,'".$this->getTypeCompte()."',".$this->getNumeroCompte().",".$this->getCleRib().",'".$this->getEtatCompte()."',".$this->getDepotInitia().",'".$this->getDateOuverture()."')");
                  
-        //         var_dump(array(
+        
+         return $req;
+    }
+    catch(PDOEXCEPTION $ex){
+        echo 'erreur :'  .$ex ->getMessage();
+ }
+
+        }
+    }
+
+//         var_dump(array(
 
         //             $this->getTypeCompte(),
         //             (int)$this->getNumeroCompte(),
@@ -111,11 +121,4 @@ class OuvertureCompte
   
         //  ));
          //var_dump($_POST);
-         return $req;
-    }catch(PDOEXCEPTION $ex){
-        echo 'erreur :'  .$ex ->getMessage();
- }
-
-}
-
-}
+        
